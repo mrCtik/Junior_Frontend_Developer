@@ -22,10 +22,7 @@ const getFastestLoadedPhoto = (ids) => {
     const result = ids.map((id) => fetch(`${PHOTO_URL}/${id}`));
 
     Promise.race(result)
-        .then((result) => {
-            const dataResults = result.json();
-            return (dataResults);
-        })
+        .then((result) => result.json())
         .then((photos) => {
                 const urlHTML = createPhotoElement(photos.url, photos.title);
                 dataContainer.append(urlHTML);
