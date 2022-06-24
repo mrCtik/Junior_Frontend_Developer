@@ -14,4 +14,6 @@ newButton.onclick = function() {
     console.log('click');
     localStorage.setItem('cookie', 'none');
     cookie();
+    //изменения
+    
 };
